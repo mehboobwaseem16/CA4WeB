@@ -1,5 +1,3 @@
-// Author:Waseem Mehboob
-// ID: 18072
 import React, { Component } from 'react'
 import { Typography, Button, Form, Input } from 'antd';
 import axios from 'axios';
@@ -8,7 +6,7 @@ import FileUpload from '../../utils/FileUpload';
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const IRECities = [
+const Cities = [
     { key: 1, value: "Dublin" },
     { key: 2, value: "Cork" },
     { key: 3, value: "Limerick" },
@@ -23,7 +21,7 @@ export class UploadProductPage extends Component {
     state = {
         title: '',
         description: '',
-        IRECities: 1,
+        Cities: 1,
         images: [],
         price: 0
     }
@@ -41,8 +39,8 @@ export class UploadProductPage extends Component {
         this.setState({ description: event.currentTarget.value })
     }
 
-    handleChangeIRECities = (event) => {
-        this.setState({ IRECities: event.currentTarget.value })
+    handleChangeCities = (event) => {
+        this.setState({ cities: event.currentTarget.value })
     }
 
     onSubmit = (event) => {
@@ -53,7 +51,7 @@ export class UploadProductPage extends Component {
         }
 
         if (!this.state.title || !this.state.description ||
-            !this.state.IRECities || !this.state.images
+            !this.state.cities || !this.state.images
             || !this.state.price) {
             return alert('Please first fill all the fields')
         }
@@ -63,7 +61,7 @@ export class UploadProductPage extends Component {
             title: this.state.title,
             description: this.state.description,
             images: this.state.images,
-            IRECities: this.state.IRECities,
+            cities: this.state.cities,
             price: this.state.price
         }
 
@@ -116,8 +114,8 @@ export class UploadProductPage extends Component {
                     value={this.state.price}
                 />
                 <br /><br />
-                <select onChange={this.handleChangeIRECities}>
-                    {IRECities.map(item => (
+                <select onChange={this.handleChangeCities}>
+                    {Cities.map(item => (
                         <option key={item.key} value={item.key}>{item.value}</option>
                     ))}
                 </select>

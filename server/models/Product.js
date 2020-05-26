@@ -1,5 +1,3 @@
-// Author:Waseem Mehboob
-// ID: 18072
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -23,7 +21,7 @@ const productSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    continents: {
+    cities: {
         type: Number,
         default: 1
     },

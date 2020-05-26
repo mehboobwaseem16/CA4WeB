@@ -1,5 +1,3 @@
-// Author:Waseem Mehboob
-// ID: 18072
 import React, { useState } from 'react'
 import { Typography, Button, Form, message, Input, Icon } from 'antd';
 import FileUpload from '../../utils/FileUpload'
@@ -8,7 +6,7 @@ import Axios from 'axios';
 const { Title } = Typography;
 const { TextArea } = Input;
 
-const IRECities = [
+const Cities = [
     { key: 1, value: "Dublin" },
     { key: 2, value: "Cork" },
     { key: 3, value: "Limerick" },
@@ -23,7 +21,7 @@ function UploadProductPage(props) {
     const [TitleValue, setTitleValue] = useState("")
     const [DescriptionValue, setDescriptionValue] = useState("")
     const [PriceValue, setPriceValue] = useState(0)
-    const [ContinentValue, setContinentValue] = useState(1)
+    const [CityValue, setCityValue] = useState(1)
 
     const [Images, setImages] = useState([])
 
@@ -40,8 +38,8 @@ function UploadProductPage(props) {
         setPriceValue(event.currentTarget.value)
     }
 
-    const onIRECitiesSelectChange = (event) => {
-        setContinentValue(event.currentTarget.value)
+    const onCitiesSelectChange = (event) => {
+        setCityValue(event.currentTarget.value)
     }
 
     const updateImages = (newImages) => {
@@ -52,7 +50,7 @@ function UploadProductPage(props) {
 
 
         if (!TitleValue || !DescriptionValue || !PriceValue ||
-            !ContinentValue || !Images) {
+            !CityValue || !Images) {
             return alert('fill all the fields first!')
         }
 
@@ -62,7 +60,7 @@ function UploadProductPage(props) {
             description: DescriptionValue,
             price: PriceValue,
             images: Images,
-            IRECities: ContinentValue,
+            cities: CityValue,
         }
 
         Axios.post('/api/product/uploadProduct', variables)
@@ -112,8 +110,8 @@ function UploadProductPage(props) {
                     type="number"
                 />
                 <br /><br />
-                <select onChange={onIRECitiesSelectChange} value={ContinentValue}>
-                    {IRECities.map(item => (
+                <select onChange={onCitiesSelectChange} value={CityValue}>
+                    {Cities.map(item => (
                         <option key={item.key} value={item.key}>{item.value} </option>
                     ))}
                 </select>

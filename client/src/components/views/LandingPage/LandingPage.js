@@ -1,12 +1,10 @@
-// Author:Waseem Mehboob
-// ID: 18072
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import { Icon, Col, Card, Row } from 'antd';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
 import RadioBox from './Sections/RadioBox';
-import { continents, price } from './Sections/Datas';
+import { cities, price } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
 
 const { Meta } = Card;
@@ -20,7 +18,7 @@ function LandingPage() {
     const [SearchTerms, setSearchTerms] = useState("")
 
     const [Filters, setFilters] = useState({
-        continents: [],
+        cities: [],
         price: []
     })
 
@@ -146,7 +144,7 @@ function LandingPage() {
     return (
         <div style={{ width: '75%', margin: '3rem auto' }}>
             <div style={{ textAlign: 'center' }}>
-                <h2>  Let's Explore Ireland  <Icon type="rocket" />  </h2>
+                <h2>  Let's Travel Anywhere  <Icon type="rocket" />  </h2>
             </div>
 
 
@@ -155,8 +153,8 @@ function LandingPage() {
             <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24} >
                     <CheckBox
-                        list={continents}
-                        handleFilters={filters => handleFilters(filters, "continents")}
+                        list={cities}
+                        handleFilters={filters => handleFilters(filters, "cities")}
                     />
                 </Col>
                 <Col lg={12} xs={24}>

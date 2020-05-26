@@ -1,5 +1,3 @@
-// Author:Waseem Mehboob
-// ID: 18072
 import React, { useState } from 'react'
 import { Input } from 'antd';
 

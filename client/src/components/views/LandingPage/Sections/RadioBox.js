@@ -1,5 +1,3 @@
-// Author:Waseem Mehboob
-// ID: 18072
 import React, { useState } from 'react'
 import { Collapse, Radio } from 'antd';
 const { Panel } = Collapse;

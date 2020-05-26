@@ -1,5 +1,4 @@
-// Author:Waseem Mehboob
-// ID: 18072
+
 const price = [
     {
         "_id": 0,
@@ -35,7 +34,7 @@ const price = [
 
 
 
-const continents = [
+const cities = [
     {
         "_id": 1,
         "name": "Dublin"
@@ -58,16 +57,16 @@ const continents = [
     },
     {
         "_id": 6,
-        "name": "Port Louis"
+        "name": "Port Loius"
     },
     {
         "_id": 7,
-        "name": "Galways"
+        "name": "Galway"
     }
 ]
 
 
 export {
     price,
-    continents
+    cities
 }
