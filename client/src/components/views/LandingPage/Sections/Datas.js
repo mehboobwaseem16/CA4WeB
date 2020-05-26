@@ -38,31 +38,31 @@ const price = [
 const continents = [
     {
         "_id": 1,
-        "name": "Africa"
+        "name": "Dublin"
     },
     {
         "_id": 2,
-        "name": "Europe"
+        "name": "Cork"
     },
     {
         "_id": 3,
-        "name": "Asia"
+        "name": "Limerick"
     },
     {
         "_id": 4,
-        "name": "North America"
+        "name": "Sligo"
     },
     {
         "_id": 5,
-        "name": "South America"
+        "name": "Kilkenny"
     },
     {
         "_id": 6,
-        "name": "Australia"
+        "name": "Port Louis"
     },
     {
         "_id": 7,
-        "name": "Antarctica"
+        "name": "Galways"
     }
 ]
 
